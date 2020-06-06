@@ -34,3 +34,11 @@ def about_page():
 @app.route('/contact')
 def contact_page():
     return render_template('contact.html')
+
+
+def view_logs():
+    from pprint import pprint
+
+    # fetch all logs and show them
+    data = list(db.page_access_log.find({}))
+    pprint(data)
